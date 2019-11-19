@@ -5,77 +5,6 @@ ConversionAPostFija::ConversionAPostFija()
 	this->Initializer();
 }
 
-int ConversionAPostFija::Precedencia(string val, string val2)
-{
-	if (val == "+")
-	{
-		if (val2 == "+" || val2 == "-")
-		{
-			return 0;
-		}
-		return 1;
-	}
-	else if (val == "-")
-	{
-		if (val2 == "+" || val2 == "-")
-		{
-			return 0;
-		}
-		return 1;
-	}
-	else if (val == "*")
-	{
-		if (val2 == "+" || val2 == "-")
-		{
-			return -1;
-		}
-		if (val2 == "*" || val2 == "/")
-		{
-			return 0;
-		}
-		return 1;
-	}
-	else if (val == "/")
-	{
-		if (val2 == "+" || val2 == "-")
-		{
-			return -1;
-		}
-		if (val2 == "*" || val2 == "/")
-		{
-			return 0;
-		}
-		return 1;
-	}
-	else if (val == "%")
-	{
-		if (val2 == "+" || val2 == "-" || val2 == "*" || val2 == "/")
-		{
-			return -1;
-		}
-		if (val2 == "%")
-		{
-			return 0;
-		}
-		return 1;
-
-	}
-	else if (val == "^")
-	{
-		if (val2 == "+" || val2 == "-" || val2 == "*" || val2 == "/" || val2 == "%")
-		{
-			return -1;
-		}
-		if (val2 == "^")
-		{
-			return 0;
-		}
-		return 1;
-	}
-
-	return 0;
-}
-
 void ConversionAPostFija::Initializer()
 {
 	this->operators = new stack <char>();
@@ -187,22 +116,35 @@ vector<string>* ConversionAPostFija::Convert(string cadena)
 			}
 			else
 			{
-
-				string operator1 = string(1, this->operators->top());
-				string operator2 = string(1, read);
-
-				int precedencia = this->Precedencia(operator1, operator2);
-				if (precedencia == -1)
+				char chars = this->operators->top();
+				string first = string(1, chars);
+				string second = string(1, read);
+				int result = this->Precedencia(first, second);
+				bool c = true;
+				while (c)
 				{
+					if (result == 0 || result == -1)
+					{
+						this->numbers->push_back(first);
+						this->operators->pop();
 
-				}
-				else if (precedencia == 0 || precedencia == 1)
-				{
-
-				}
-				else
-				{
-					this->operators->push(read);
+						if (!this->operators->empty())
+						{
+							chars = this->operators->top();
+							first = string(1, chars);
+							result = this->Precedencia(first, second);
+						}
+						else
+						{
+							this->operators->push(read);
+							c = false;
+						}
+					}
+					else
+					{
+						this->operators->push(read);
+						c = false;
+					}
 				}
 			}
 		}
@@ -219,4 +161,75 @@ vector<string>* ConversionAPostFija::Convert(string cadena)
 		this->numbers->push_back(val);
 	}
 	return this->numbers;
+}
+
+int ConversionAPostFija::Precedencia(string val, string val2)
+{
+	if (val == "+")
+	{
+		if (val2 == "+" || val2 == "-")
+		{
+			return 0;
+		}
+		return 1;
+	}
+	else if (val == "-")
+	{
+		if (val2 == "+" || val2 == "-")
+		{
+			return 0;
+		}
+		return 1;
+	}
+	else if (val == "*")
+	{
+		if (val2 == "+" || val2 == "-")
+		{
+			return -1;
+		}
+		if (val2 == "*" || val2 == "/")
+		{
+			return 0;
+		}
+		return 1;
+	}
+	else if (val == "/")
+	{
+		if (val2 == "+" || val2 == "-")
+		{
+			return -1;
+		}
+		if (val2 == "*" || val2 == "/")
+		{
+			return 0;
+		}
+		return 1;
+	}
+	else if (val == "%")
+	{
+		if (val2 == "+" || val2 == "-" || val2 == "*" || val2 == "/")
+		{
+			return -1;
+		}
+		if (val2 == "%")
+		{
+			return 0;
+		}
+		return 1;
+
+	}
+	else if (val == "^")
+	{
+		if (val2 == "+" || val2 == "-" || val2 == "*" || val2 == "/" || val2 == "%")
+		{
+			return -1;
+		}
+		if (val2 == "^")
+		{
+			return 0;
+		}
+		return 1;
+	}
+
+	return -3;
 }

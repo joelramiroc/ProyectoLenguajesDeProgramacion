@@ -1,2 +1,5 @@
-﻿  EvaluadorTest.cpp
-  EvaluadorTest.vcxproj -> C:\Users\glalumno\source\repos\EvaluadorTest\Debug\EvaluadorTest.exe
+﻿  ConversionAPostFija.cpp
+  EvaluadorTest.cpp
+  Generando código...
+C:\Users\Joel\Desktop\EvaluadorTest\EvaluadorTest\ConversionAPostFija.cpp(27,20): warning C4018: '<': no coinciden signed/unsigned
+  EvaluadorTest.vcxproj -> C:\Users\Joel\Desktop\EvaluadorTest\Debug\EvaluadorTest.exe

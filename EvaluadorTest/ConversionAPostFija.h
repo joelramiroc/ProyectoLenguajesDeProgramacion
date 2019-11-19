@@ -11,10 +11,10 @@ private:
     vector<char> signs;
     stack <char>* operators;
     vector<string>* numbers;
-    int Precedencia(string val, string val2);
-    void Initializer();
 public:
     ConversionAPostFija();
+    void Initializer();
     vector<string>* Convert(string cadena);
+	int Precedencia(string val, string val2);
 };
 
