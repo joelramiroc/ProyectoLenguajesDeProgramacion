@@ -9,8 +9,10 @@ class ConversionAPostFija
 {
 private:
     vector<char> signs;
-    stack <char>* operators;
-    vector<string>* numbers;
+    //c++ 11
+    stack <char>* operators = nullptr;
+    //c++ 11
+    vector<string>* numbers = nullptr;
 public:
     ConversionAPostFija();
     void Initializer();

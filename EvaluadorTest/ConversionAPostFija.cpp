@@ -9,23 +9,24 @@ void ConversionAPostFija::Initializer()
 {
 	this->operators = new stack <char>();
 	this->numbers = new vector<string>();
-	this->signs.push_back('+');
-	this->signs.push_back('-');
-	this->signs.push_back('*');
-	this->signs.push_back('/');
-	this->signs.push_back('^');
-	this->signs.push_back('%');
+	//c++ 11
+	this->signs = { '+' ,'-','*', '/' ,'^' ,'%' };
 }
 
 vector<string>* ConversionAPostFija::Convert(string cadena)
 {
 	string numeroToConvert = "";
+
+	//c++ 11
 	double number = 0;
 	char sign = NULL;
-	bool isSign = false;
+
+	//c++ 11
+	bool isSign = bool();
 
 	for (int i = 0; i < cadena.length(); i++)
 	{
+		isSign = false;
 		char read = cadena.at(i);
 		for (auto it = signs.begin(); it != signs.end(); it++)
 		{
