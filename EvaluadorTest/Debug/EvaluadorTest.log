@@ -1,5 +1,5 @@
 ﻿  ConversionAPostFija.cpp
-C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\EvaluadorTest\ConversionAPostFija.cpp(27,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\EvaluadorTest\ConversionAPostFija.cpp(53,20): warning C4018: '<': signed/unsigned mismatch
   EvaluadorTest.cpp
   Generating Code...
   EvaluadorTest.vcxproj -> C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\Debug\EvaluadorTest.exe

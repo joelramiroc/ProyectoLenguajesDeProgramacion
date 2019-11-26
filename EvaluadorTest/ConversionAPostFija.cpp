@@ -1,5 +1,30 @@
 #include "ConversionAPostFija.h"
 
+bool ConversionAPostFija::IsSign(char val)
+{
+	for (auto it = signs.begin(); it != signs.end(); it++)
+	{
+
+		if (*it == val)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+bool ConversionAPostFija::isNumber(char val)
+{
+
+	return false;
+}
+
+bool ConversionAPostFija::HaveBadValues(string cadena)
+{
+	return regex_match(cadena, regex("[0-9|'.'|'*'|'/'|'+'|'-'|'('|')'|'['|'\\]'|'^'|'%']{1,}"));
+}
+
 ConversionAPostFija::ConversionAPostFija()
 {
 	this->Initializer();
@@ -11,6 +36,7 @@ void ConversionAPostFija::Initializer()
 	this->numbers = new vector<string>();
 	//c++ 11
 	this->signs = { '+' ,'-','*', '/' ,'^' ,'%' };
+	this->numbersP = { '1' ,'2' ,'3','4','5','6','7','8','9','0','.' };
 }
 
 vector<string>* ConversionAPostFija::Convert(string cadena)
@@ -28,16 +54,7 @@ vector<string>* ConversionAPostFija::Convert(string cadena)
 	{
 		isSign = false;
 		char read = cadena.at(i);
-		for (auto it = signs.begin(); it != signs.end(); it++)
-		{
-
-			if (*it == read)
-			{
-				sign = *it;
-				isSign = true;
-				break;
-			}
-		}
+		isSign = IsSign(read);
 		if (!isSign)
 		{
 			if (read == '(')
