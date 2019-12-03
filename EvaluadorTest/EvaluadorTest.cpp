@@ -13,6 +13,8 @@ int main()
 	ExpressionValidation* expressionValidation = new ExpressionValidation();
 	ConversionAPostFija* conversionAPostFija = new ConversionAPostFija();
 	PostFijaOperacion* postFijaOperacion = new PostFijaOperacion();
+	auto r = expressionValidation->Validation("[(2+5)");
+	cout << postFijaOperacion->Operate(conversionAPostFija->Convert("[(2+5)")) << endl;
 	//cout<<postFijaOperacion->Operate(conversionAPostFija->Convert("10+(1+2)*2+2/2"))<<endl;
-	cout << conversionAPostFija->HaveBadValues("10+2*5/[4]");
+	//cout << conversionAPostFija->HaveBadValues("10+2*5/[4]");
 }

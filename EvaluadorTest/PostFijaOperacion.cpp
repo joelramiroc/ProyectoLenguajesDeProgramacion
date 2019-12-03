@@ -32,7 +32,7 @@ double PostFijaOperacion::Operate(vector<string>* postFijaOperation)
 			pila->pop();
 			double secondNum = pila->top();
 			pila->pop();
-			pila->push(this->BasicOperation(firstNum, secondNum,*i));
+			pila->push(this->BasicOperation(secondNum, firstNum, *i));
 		}
 	}
 

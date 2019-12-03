@@ -11,6 +11,7 @@ private:
 	bool CorrectOperators(string expression);
 	bool CorrectParentesis(string expression);
 	bool IsSign(char sign);
+	bool HaveCorrectCharacters(string cadena);
 public:
 	ExpressionValidation();
 	bool Validation(string expression);

@@ -1,2 +1,10 @@
-﻿  TDD.cpp
+﻿  ConversionAPostFija.cpp
+C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\EvaluadorTest\ConversionAPostFija.cpp(48,20): warning C4018: '<': signed/unsigned mismatch
+  ExpressionValidation.cpp
+C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\EvaluadorTest\ExpressionValidation.cpp(38,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\EvaluadorTest\ExpressionValidation.cpp(96,20): warning C4018: '<': signed/unsigned mismatch
+  PostFijaOperacion.cpp
+  TDD.cpp
+  Generating Code...
+     Creating library C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\Debug\TDD.lib and object C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\Debug\TDD.exp
   TDD.vcxproj -> C:\Users\glalumno\source\repos\ProyectoLenguajesDeProgramacion\Debug\TDD.dll

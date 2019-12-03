@@ -1,4 +1,5 @@
 #include "ExpressionValidation.h"
+#include <regex>
 
 void ExpressionValidation::InitializeSigns()
 {
@@ -22,7 +23,7 @@ bool ExpressionValidation::Validation(string expression)
 		this->InitializeSigns();
 	}
 
-	if (this->CorrectOperators(expression) && this->CorrectParentesis(expression))
+	if (this->CorrectOperators(expression) && this->CorrectParentesis(expression) && this->HaveCorrectCharacters(expression))
 	{
 		return true;
 	}
@@ -157,4 +158,9 @@ bool ExpressionValidation::IsSign(char sign)
 {
 	bool contains = find(signs.begin(), signs.end(), sign) != signs.end();
 	return contains;
+}
+
+bool ExpressionValidation::HaveCorrectCharacters(string cadena)
+{
+	return regex_match(cadena, regex("[0-9|'.'|'*'|'/'|'+'|'-'|'('|')'|'['|'\\]'|'^'|'%']{1,}"));
 }

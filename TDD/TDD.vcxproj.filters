@@ -24,6 +24,12 @@
     <ClCompile Include="..\EvaluadorTest\ConversionAPostFija.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\EvaluadorTest\ExpressionValidation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EvaluadorTest\PostFijaOperacion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">

@@ -20,7 +20,6 @@ private:
     bool IsSign(char val);
     bool isNumber(char val);
 public:
-    bool HaveBadValues(string cadena);
     ConversionAPostFija();
     void Initializer();
     vector<string>* Convert(string cadena);

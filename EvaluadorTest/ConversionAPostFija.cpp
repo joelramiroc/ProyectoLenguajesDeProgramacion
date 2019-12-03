@@ -20,11 +20,6 @@ bool ConversionAPostFija::isNumber(char val)
 	return false;
 }
 
-bool ConversionAPostFija::HaveBadValues(string cadena)
-{
-	return regex_match(cadena, regex("[0-9|'.'|'*'|'/'|'+'|'-'|'('|')'|'['|'\\]'|'^'|'%']{1,}"));
-}
-
 ConversionAPostFija::ConversionAPostFija()
 {
 	this->Initializer();
