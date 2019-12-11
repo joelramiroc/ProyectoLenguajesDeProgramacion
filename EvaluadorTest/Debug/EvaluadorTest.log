@@ -1,2 +1,1 @@
-﻿  PostFijaOperacion.cpp
-  EvaluadorTest.vcxproj -> C:\Users\Joel\Source\Repos\ProyectoLenguajesDeProgramacion\Debug\EvaluadorTest.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(76,5): warning : Acceso denegado a la ruta de acceso 'c:\users\joel\source\repos\proyectolenguajesdeprogramacion\debug\evaluadortest.exe'.
