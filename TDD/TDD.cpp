@@ -63,5 +63,24 @@ namespace TDD
 			auto operar = new PostFijaOperacion();
 			Assert::AreEqual(5.00, operar->Operate(convertir->Convert("2+9/3")));
 		}
+		
+		TEST_METHOD(TotalValidation3)
+		{
+			auto convertir = new ConversionAPostFija();
+			auto operar = new PostFijaOperacion();
+			Assert::AreEqual(10.00, operar->Operate(convertir->Convert("9-2+9/3")));
+		}
+
+		TEST_METHOD(TotalValidation4)
+		{
+			auto convertir = new ConversionAPostFija();
+			auto operar = new PostFijaOperacion();
+			Assert::AreEqual(-4.00, operar->Operate(convertir->Convert("2+9/3-9")));
+		}
+
+		TEST_METHOD(TotalValidation5)
+		{
+			Assert::AreEqual(0b110,6);
+		}
 	};
 }

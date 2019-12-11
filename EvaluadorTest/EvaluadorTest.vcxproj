@@ -155,6 +155,7 @@
     <ClInclude Include="ConversionAPostFija.h" />
     <ClInclude Include="ExpressionValidation.h" />
     <ClInclude Include="PostFijaOperacion.h" />
+    <ClInclude Include="Template.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

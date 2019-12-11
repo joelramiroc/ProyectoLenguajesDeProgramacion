@@ -162,5 +162,12 @@ bool ExpressionValidation::IsSign(char sign)
 
 bool ExpressionValidation::HaveCorrectCharacters(string cadena)
 {
-	return regex_match(cadena, regex("[0-9|'.'|'*'|'/'|'+'|'-'|'('|')'|'['|'\\]'|'^'|'%']{1,}"));
+	/*
+	C++11 definió la sintaxis para sufijos literales definidos por el usuario, pero la biblioteca estándar no utilizó ninguno de ellos. C++14 agrega los siguientes literales estándar.
+	"s", para la creación de los diversos tipos std::basic_string.
+	"h", "min", "s", "ms", "us", "ns", para la creación de los correspondientes intervalos de tiempo std::chrono::duration.
+	*/
+	//c++ 14 auto asigna el valor de la variable, en este caso la s al final significa casteo o conversion a string. si fuese s seria conversion a segundos
+	auto regexValue = "[0-9|'.'|'*'|'/'|'+'|'-'|'('|')'|'['|'\\]'|'^'|'%']{1,}"s;
+	return regex_match(cadena, regex(regexValue));
 }

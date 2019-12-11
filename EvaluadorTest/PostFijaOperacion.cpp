@@ -1,4 +1,10 @@
+
 #include "PostFijaOperacion.h"
+#include "Template.h"
+
+//c++ 14 Permite declarar varios namespaces en una sola  sentencia:
+//using namespace AB;
+//using namespace A;
 
 PostFijaOperacion::PostFijaOperacion()
 {
@@ -52,6 +58,8 @@ double PostFijaOperacion::BasicOperation(double n1, double n2, string operatorV)
 {
 	if (operatorV == "+")
 	{
+		//c++ 17 Expresiones plegables
+		//return sum(n1, n2);
 		return n1 + n2;
 	}
 	else if (operatorV == "-")

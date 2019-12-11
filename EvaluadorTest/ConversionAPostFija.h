@@ -17,7 +17,8 @@ private:
     //c++ 11
     vector<string>* numbers = nullptr;
 
-    bool IsSign(char val);
+	//c++ 14 auto deduce el valor a retornar una funcion
+    auto IsSign(char val);
     bool isNumber(char val);
 public:
     ConversionAPostFija();

@@ -1,6 +1,7 @@
 #include "ConversionAPostFija.h"
 
-bool ConversionAPostFija::IsSign(char val)
+//c++ 14 auto deduce el valor a retornar una funcion
+auto ConversionAPostFija::IsSign(char val)
 {
 	for (auto it = signs.begin(); it != signs.end(); it++)
 	{
@@ -178,21 +179,27 @@ vector<string>* ConversionAPostFija::Convert(string cadena)
 
 int ConversionAPostFija::Precedencia(string val, string val2)
 {
+	//c++ 14 Generic lambda expressions
+	auto identity = [](auto x) { return x; };
+	int value = identity(0); 
+
 	if (val == "+")
 	{
 		if (val2 == "+" || val2 == "-")
 		{
-			return 0;
+			return value;
 		}
-		return 1;
+		//c++ 14 binarios literales
+		return 0b1;
 	}
 	else if (val == "-")
 	{
 		if (val2 == "+" || val2 == "-")
 		{
-			return 0;
+			return value;
 		}
-		return 1;
+		//c++ 14 binarios literales
+		return 0b1;
 	}
 	else if (val == "*")
 	{
@@ -202,9 +209,10 @@ int ConversionAPostFija::Precedencia(string val, string val2)
 		}
 		if (val2 == "*" || val2 == "/")
 		{
-			return 0;
+			return value;
 		}
-		return 1;
+		//c++ 14 binarios literales
+		return 0b1;
 	}
 	else if (val == "/")
 	{
@@ -214,9 +222,10 @@ int ConversionAPostFija::Precedencia(string val, string val2)
 		}
 		if (val2 == "*" || val2 == "/")
 		{
-			return 0;
+			return value;
 		}
-		return 1;
+		//c++ 14 binarios literales
+		return 0b1;
 	}
 	else if (val == "%")
 	{
@@ -228,7 +237,8 @@ int ConversionAPostFija::Precedencia(string val, string val2)
 		{
 			return 0;
 		}
-		return 1;
+		//c++ 14 binarios literales
+		return 0b1;
 
 	}
 	else if (val == "^")
@@ -239,9 +249,10 @@ int ConversionAPostFija::Precedencia(string val, string val2)
 		}
 		if (val2 == "^")
 		{
-			return 0;
+			return value;
 		}
-		return 1;
+		//c++ 14 binarios literales
+		return 0b1;
 	}
 
 	return -3;

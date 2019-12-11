@@ -2,8 +2,9 @@
 #include <stack> 
 #include <iostream>
 #include <queue> 
-
+#include <string> 
 using namespace std;
+
 class PostFijaOperacion
 {
 private:
